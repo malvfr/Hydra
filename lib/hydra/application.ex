@@ -14,9 +14,10 @@ defmodule Hydra.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Hydra.PubSub},
       # Start the Endpoint (http/https)
-      HydraWeb.Endpoint
+      HydraWeb.Endpoint,
       # Start a worker by calling: Hydra.Worker.start_link(arg)
-      # {Hydra.Worker, arg}
+      # {Hydra.Worker, arg},
+      {Hydra.Pickings.Workers.ConsumeProductsFromKafka, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
